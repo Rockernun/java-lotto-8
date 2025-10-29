@@ -3,6 +3,7 @@ package lotto.domain.model;
 public class Purchase {
 
     private final int purchasedLottoCount;
+    private static final int PAYMENT_UNIT = 1000;
 
     public Purchase(int purchaseAmount) {
         validatePaymentIsPositive(purchaseAmount);
@@ -15,7 +16,7 @@ public class Purchase {
     }
 
     private int calculateLottoCount(int purchaseAmount) {
-        return purchaseAmount / 1000;
+        return purchaseAmount / PAYMENT_UNIT;
     }
 
     private void validatePaymentIsPositive(int purchaseAmount) {
@@ -25,8 +26,8 @@ public class Purchase {
     }
 
     private void validatePaymentIsMultipleOfPrice(int purchaseAmount) {
-        if (purchaseAmount % 1000 != 0) {
-            throw new IllegalArgumentException("[ERROR] 구매 금액은 1,000원 단위여야 합니다.");
+        if (purchaseAmount % PAYMENT_UNIT != 0) {
+            throw new IllegalArgumentException(String.format("[ERROR] 구매 금액은 %d원 단위여야 합니다.", PAYMENT_UNIT));
         }
     }
 }
