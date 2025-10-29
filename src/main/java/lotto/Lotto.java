@@ -7,11 +7,19 @@ import java.util.Set;
 public class Lotto {
     private final List<Integer> numbers;
 
-    public Lotto(List<Integer> numbers) {
+    private Lotto(List<Integer> numbers) {
         validateNumberCount(numbers);
         validateNumberInRange(numbers);
         validateDuplicateNumbers(numbers);
         this.numbers = numbers;
+    }
+
+    public static Lotto of(List<Integer> numbers) {
+        return new Lotto(numbers);
+    }
+
+    public List<Integer> getLottoNumbers() {
+        return numbers;
     }
 
     private void validateNumberCount(List<Integer> numbers) {
@@ -22,7 +30,7 @@ public class Lotto {
 
     private void validateNumberInRange(List<Integer> numbers) {
         for (Integer number : numbers) {
-            if (number < 0 || number > 45) {
+            if (number < 1 || number > 45) {
                 throw new IllegalArgumentException("[ERROR] 로또 번호는 1부터 45사이의 숫자여야 합니다.");
             }
         }
