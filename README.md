@@ -114,9 +114,9 @@
   - [x] 중복된 숫자가 있으면 IllegalArgumentException 예외가 발생한다.
 
 ### `Model(Purchase)`
-- [ ] 금액만큼 구입 가능한 로또 매수를 계산한다.
-  - [ ] 구매 금액이 양수가 아니라면 IllegalArgumentException 예외가 발생한다.
-  - [ ] 구매 금액이 1,000원 단위가 아닐 경우, IllegalArgumentException 예외가 발생한다.
+- [x] 금액만큼 구입 가능한 로또 매수를 계산한다.
+  - [x] 구매 금액이 양수가 아니라면 IllegalArgumentException 예외가 발생한다.
+  - [x] 구매 금액이 1,000원 단위가 아닐 경우, IllegalArgumentException 예외가 발생한다.
 
 ### `Model(LottoGenerator)`
 - [ ] 난수를 생성한다.
