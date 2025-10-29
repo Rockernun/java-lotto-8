@@ -108,10 +108,10 @@
 
 # 구현할 기능 목록
 ### `Model(Lotto)`
-- [ ] 로또 한 장을 반환한다.
-  - [ ] 번호가 6개가 아니라면 IllegalArgumentException 예외가 발생한다.
-  - [ ] 범위 내의 숫자가 아니라면 IllegalArgumentException 예외가 발생한다.
-  - [ ] 중복된 숫자가 있으면 IllegalArgumentException 예외가 발생한다.
+- [x] 로또 한 장을 반환한다.
+  - [x] 번호가 6개가 아니라면 IllegalArgumentException 예외가 발생한다.
+  - [x] 범위 내의 숫자가 아니라면 IllegalArgumentException 예외가 발생한다.
+  - [x] 중복된 숫자가 있으면 IllegalArgumentException 예외가 발생한다.
 
 ### `Model(Purchase)`
 - [ ] 금액만큼 구입 가능한 로또 매수를 계산한다.
