@@ -133,10 +133,15 @@
   - [x] 번호 일치 여부에 따른 등수를 검증한다.
 
 ### `Model(WinningNumbers)`
-- [ ] 당첨 번호와 보너스 번호를 저장한다.
-  - [ ] 당첨 번호와 보너스 번호가 양수가 아니라면 IllegalArgumentException 예외가 발생한다.
-  - [ ] 당첨 번호와 보너스 번호에 범위를 벗어난 숫자가 있다면 IllegalArgumentException 예외가 발생한다.
-  - [ ] 당첨 번호와 보너스 번호에 중복된 숫자가 있다면 IllegalArgumentException 예외가 발생한다.
+- [x] 당첨 번호를 저장한다.
+  - [x] 당첨 번호가 양수가 아니라면 IllegalArgumentException 예외가 발생한다.
+  - [x] 당첨 번호에 범위를 벗어난 숫자가 있다면 IllegalArgumentException 예외가 발생한다.
+  - [x] 당첨 번호에 중복된 숫자가 있다면 IllegalArgumentException 예외가 발생한다.
+
+### `Model(BonusNumber)`
+- [ ] 보너스 번호를 저장한다.
+  - [ ] 보너스 번호가 양수가 아니라면 IllegalArgumentException 예외가 발생한다.
+  - [ ] 보너스 번호에 범위를 벗어난 숫자가 있다면 IllegalArgumentException 예외가 발생한다.
 
 ### `Model(Yield)`
 - [ ] 당첨에 따른 수익률을 계산한다.
