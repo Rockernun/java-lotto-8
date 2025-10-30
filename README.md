@@ -139,9 +139,9 @@
   - [x] 당첨 번호에 중복된 숫자가 있다면 IllegalArgumentException 예외가 발생한다.
 
 ### `Model(BonusNumber)`
-- [ ] 보너스 번호를 저장한다.
-  - [ ] 보너스 번호가 양수가 아니라면 IllegalArgumentException 예외가 발생한다.
-  - [ ] 보너스 번호에 범위를 벗어난 숫자가 있다면 IllegalArgumentException 예외가 발생한다.
+- [x] 보너스 번호를 저장한다.
+  - [x] 보너스 번호가 양수가 아니라면 IllegalArgumentException 예외가 발생한다.
+  - [x] 보너스 번호에 범위를 벗어난 숫자가 있다면 IllegalArgumentException 예외가 발생한다.
 
 ### `Model(Yield)`
 - [ ] 당첨에 따른 수익률을 계산한다.
