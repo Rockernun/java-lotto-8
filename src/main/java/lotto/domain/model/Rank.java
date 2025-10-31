@@ -8,22 +8,16 @@ public enum Rank {
     FIFTH(3, false, 5_000L),
     OTHERS(0, false, 0L);
 
-    private int matchedNumberCount;
-    private boolean bonusRequired;
-    private long prize;
+    private final int matchedNumberCount;
+    private final long prize;
 
     Rank(int matchedNumberCount, boolean bonusRequired, long prize) {
         this.matchedNumberCount = matchedNumberCount;
-        this.bonusRequired = bonusRequired;
         this.prize = prize;
     }
 
     public int getMatchedNumberCount() {
         return matchedNumberCount;
-    }
-
-    public boolean isBonusRequired() {
-        return bonusRequired;
     }
 
     public long getPrize() {
