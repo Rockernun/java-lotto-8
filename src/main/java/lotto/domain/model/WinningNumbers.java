@@ -35,24 +35,18 @@ public class WinningNumbers {
 
     private void validateWinningNumberIsPositive(List<Integer> parsedNumbers) {
         for (Integer number : parsedNumbers) {
-            if (number <= 0) {
-                throw new IllegalArgumentException("[ERROR] 당첨 번호는 양수여야 합니다.");
-            }
+            if (number <= 0) throw new IllegalArgumentException("[ERROR] 당첨 번호는 양수여야 합니다.");
         }
     }
 
     private void validateWinningNumberInRange(List<Integer> parsedNumbers) {
         for (Integer number : parsedNumbers) {
-            if (number > 45 || number < 1) {
-                throw new IllegalArgumentException("[ERROR] 당첨 번호가 범위를 벗어났습니다.");
-            }
+            if (number > 45 || number < 1) throw new IllegalArgumentException("[ERROR] 당첨 번호가 범위를 벗어났습니다.");
         }
     }
 
     private void validateNumberCount(List<Integer> parsedNumbers) {
-        if (parsedNumbers.size() != 6) {
-            throw new IllegalArgumentException("[ERROR] 당첨 번호의 개수는 6개여야 합니다.");
-        }
+        if (parsedNumbers.size() != 6) throw new IllegalArgumentException("[ERROR] 당첨 번호의 개수는 6개여야 합니다.");
     }
 
     private void validateDuplicateWinningNumber(List<Integer> parsedNumbers) {
@@ -65,20 +59,14 @@ public class WinningNumbers {
     }
 
     private void validateBonusNumberIsPositive(int bonusNumber) {
-        if (bonusNumber <= 0) {
-            throw new IllegalArgumentException("[ERROR] 보너스 번호는 양수여야 합니다.");
-        }
+        if (bonusNumber <= 0) throw new IllegalArgumentException("[ERROR] 보너스 번호는 양수여야 합니다.");
     }
 
     private void validateBonusNumberInRange(int bonusNumber) {
-        if (bonusNumber > 45 || bonusNumber < 1) {
-            throw new IllegalArgumentException("[ERROR] 보너스 번호가 범위를 벗어났습니다.");
-        }
+        if (bonusNumber > 45 || bonusNumber < 1) throw new IllegalArgumentException("[ERROR] 보너스 번호가 범위를 벗어났습니다.");
     }
 
     private void validateDuplicateBonusNumber(int bonusNumber) {
-        if (winningNumbers.contains(bonusNumber)) {
-            throw new IllegalArgumentException("[ERROR] 보너스 번호가 당첨 번호와 중복됩니다.");
-        }
+        if (winningNumbers.contains(bonusNumber)) throw new IllegalArgumentException("[ERROR] 보너스 번호가 당첨 번호와 중복됩니다.");
     }
 }
