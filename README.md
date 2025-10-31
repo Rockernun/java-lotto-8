@@ -119,7 +119,7 @@
   - [x] 구매 금액이 1,000원 단위가 아닐 경우, IllegalArgumentException 예외가 발생한다.
 
 ### `Model(LottoGenerator)`
-- [x] 난수를 생성한다.
+- [x] 중복되지 않는 난수 리스트를 생성한다.
   - [x] 난수 생성 전략이 달라질 수 있으므로 추상화한다.
 
 ### `Model(Parser)`
