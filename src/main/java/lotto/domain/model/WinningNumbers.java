@@ -1,5 +1,9 @@
 package lotto.domain.model;
 
+import static lotto.domain.LottoRules.lottoSize;
+import static lotto.domain.LottoRules.maxNumber;
+import static lotto.domain.LottoRules.minNumber;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -41,12 +45,12 @@ public class WinningNumbers {
 
     private void validateWinningNumberInRange(List<Integer> parsedNumbers) {
         for (Integer number : parsedNumbers) {
-            if (number > 45 || number < 1) throw new IllegalArgumentException("[ERROR] 당첨 번호가 범위를 벗어났습니다.");
+            if (number < minNumber() || number > maxNumber()) throw new IllegalArgumentException("[ERROR] 당첨 번호가 범위를 벗어났습니다.");
         }
     }
 
     private void validateNumberCount(List<Integer> parsedNumbers) {
-        if (parsedNumbers.size() != 6) throw new IllegalArgumentException("[ERROR] 당첨 번호의 개수는 6개여야 합니다.");
+        if (parsedNumbers.size() != lottoSize()) throw new IllegalArgumentException(String.format("[ERROR] 당첨 번호의 개수는 %d개여야 합니다.", lottoSize()));
     }
 
     private void validateDuplicateWinningNumber(List<Integer> parsedNumbers) {
@@ -63,7 +67,7 @@ public class WinningNumbers {
     }
 
     private void validateBonusNumberInRange(int bonusNumber) {
-        if (bonusNumber > 45 || bonusNumber < 1) throw new IllegalArgumentException("[ERROR] 보너스 번호가 범위를 벗어났습니다.");
+        if (bonusNumber < minNumber() || bonusNumber > maxNumber()) throw new IllegalArgumentException("[ERROR] 보너스 번호가 범위를 벗어났습니다.");
     }
 
     private void validateDuplicateBonusNumber(int bonusNumber) {
