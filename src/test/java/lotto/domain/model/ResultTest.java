@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 class ResultTest {
 
-    @DisplayName("당첨되지_않은_등수는_개수가_0인지_검증한다.")
+    @DisplayName("당첨되지 않은 등수는 개수가 0인지 검증한다.")
     @Test
     void 당첨되지_않은_등수는_개수가_0인지_검증한다() {
         Map<Rank, Integer> counts = new EnumMap<>(Rank.class);
