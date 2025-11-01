@@ -1,12 +1,16 @@
 package lotto.domain.model;
 
+import static lotto.domain.LottoRules.lottoSize;
+import static lotto.domain.LottoRules.maxNumber;
+import static lotto.domain.LottoRules.minNumber;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 public class Lotto {
+
     private final List<Integer> numbers;
-    private static final int LOTTO_NUMBERS = 6;
 
     private Lotto(List<Integer> numbers) {
         validateNumberCount(numbers);
@@ -24,15 +28,15 @@ public class Lotto {
     }
 
     private void validateNumberCount(List<Integer> numbers) {
-        if (numbers.size() != LOTTO_NUMBERS) {
-            throw new IllegalArgumentException(String.format("[ERROR] 로또 번호는 %d개 입니다.", LOTTO_NUMBERS));
+        if (numbers.size() != lottoSize()) {
+            throw new IllegalArgumentException(String.format("[ERROR] 로또 번호는 %d개 입니다.", lottoSize()));
         }
     }
 
     private void validateNumberInRange(List<Integer> numbers) {
         for (Integer number : numbers) {
-            if (number < 1 || number > 45) {
-                throw new IllegalArgumentException("[ERROR] 로또 번호는 1부터 45사이의 숫자여야 합니다.");
+            if (number < minNumber() || number > maxNumber()) {
+                throw new IllegalArgumentException(String.format("[ERROR] 로또 번호는 %d부터 %d사이의 숫자여야 합니다.", minNumber(), maxNumber()));
             }
         }
     }
@@ -45,5 +49,4 @@ public class Lotto {
             }
         }
     }
-
 }
