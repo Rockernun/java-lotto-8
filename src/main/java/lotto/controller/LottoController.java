@@ -37,7 +37,7 @@ public class LottoController {
         while (true) {
             try {
                 String payment = inputView.inputPayment();
-                return new Purchase(Integer.parseInt(payment.trim()));
+                return Purchase.of(Integer.parseInt(payment.trim()));
             } catch (IllegalArgumentException e) {
                 outputView.printError(e.getMessage());
             }

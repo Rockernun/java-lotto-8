@@ -12,7 +12,7 @@ class PurchaseTest {
     @Test
     void 구매_금액이_양수가_아니면_예외가_발생한다() {
         assertThatThrownBy(() ->
-            List.of(new Purchase(-1000), new Purchase(0))
+            List.of(Purchase.of(-1000), Purchase.of(0))
         ).isInstanceOf(IllegalArgumentException.class);
     }
 
@@ -20,7 +20,7 @@ class PurchaseTest {
     @Test
     void 구매_금액_단위가_천원이_아니면_예외가_발생한다() {
         assertThatThrownBy(() ->
-            List.of(new Purchase(2025), new Purchase(1225))
+            List.of(Purchase.of(2025), Purchase.of(1225))
         ).isInstanceOf(IllegalArgumentException.class);
     }
 }

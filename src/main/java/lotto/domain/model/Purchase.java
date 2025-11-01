@@ -1,15 +1,19 @@
 package lotto.domain.model;
 
-public class Purchase {
+import static lotto.domain.LottoRules.paymentUnit;
 
-    private static final int PAYMENT_UNIT = 1000;
+public class Purchase {
 
     private final int payment;
 
-    public Purchase(int payment) {
+    private Purchase(int payment) {
         validatePaymentIsPositive(payment);
         validatePaymentIsMultipleOfPrice(payment);
         this.payment = payment;
+    }
+
+    public static Purchase of(int payment) {
+        return new Purchase(payment);
     }
 
     public int getPayment() {
@@ -17,7 +21,7 @@ public class Purchase {
     }
 
     public int getPurchasedLottoCount() {
-        return payment / PAYMENT_UNIT;
+        return payment / paymentUnit();
     }
 
     private void validatePaymentIsPositive(int payment) {
@@ -25,8 +29,8 @@ public class Purchase {
     }
 
     private void validatePaymentIsMultipleOfPrice(int payment) {
-        if (payment % PAYMENT_UNIT != 0) {
-            throw new IllegalArgumentException(String.format("[ERROR] 구매 금액은 %d원 단위여야 합니다.", PAYMENT_UNIT));
+        if (payment % paymentUnit() != 0) {
+            throw new IllegalArgumentException(String.format("[ERROR] 구매 금액은 %d원 단위여야 합니다.", paymentUnit()));
         }
     }
 }
