@@ -1,6 +1,6 @@
 package lotto.domain.model;
 
-import static lotto.domain.LottoRules.paymentUnit;
+import static lotto.domain.model.LottoRules.paymentUnit;
 
 public class Purchase {
 
