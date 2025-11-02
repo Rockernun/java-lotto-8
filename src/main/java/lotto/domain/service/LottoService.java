@@ -32,9 +32,9 @@ public class LottoService {
         Map<Rank, Integer> counts = new HashMap<>();
         for (Lotto lotto : lottoList) {
             int matchCount = countMatches(lotto, winningNumbers);
-            boolean hasBonusNumber = containsBonusNumber(lotto, winningNumbers);
+            boolean containsBonusNumber = containsBonusNumber(lotto, winningNumbers);
 
-            Rank rank = Rank.of(matchCount, hasBonusNumber);
+            Rank rank = Rank.of(matchCount, containsBonusNumber);
             counts.put(rank, counts.getOrDefault(rank, 0) + 1);
         }
 
