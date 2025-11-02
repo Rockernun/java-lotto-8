@@ -48,7 +48,7 @@ public class InputView {
 
     private void validatePaymentIsNumber(String input) {
         if (!input.matches(REGEX)) {
-            throw new IllegalArgumentException("[ERROR] 구입 금액은 숫자만 입력 가능합니다.");
+            throw new NumberFormatException("[ERROR] 구입 금액은 숫자만 입력 가능합니다.");
         }
     }
 
@@ -60,7 +60,7 @@ public class InputView {
 
     private void validateWinningNumbersAreNumber(String input) {
         if (!input.matches(REGEX)) {
-            throw new IllegalArgumentException("[ERROR] 당첨 번호는 숫자만 입력 가능합니다.");
+            throw new NumberFormatException("[ERROR] 당첨 번호는 숫자만 입력 가능합니다.");
         }
     }
 
@@ -72,7 +72,7 @@ public class InputView {
 
     private void validateBonusNumberIsNumber(String input) {
         if (!input.matches(REGEX)) {
-            throw new IllegalArgumentException("[ERROR] 보너스 번호는 숫자만 입력 가능합니다.");
+            throw new NumberFormatException("[ERROR] 보너스 번호는 숫자만 입력 가능합니다.");
         }
     }
 }
