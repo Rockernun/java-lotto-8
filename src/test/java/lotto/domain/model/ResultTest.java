@@ -18,7 +18,7 @@ class ResultTest {
         counts.put(Rank.FOURTH, 1);
         counts.put(Rank.FIFTH, 1);
 
-        Result result = new Result(counts);
+        Result result = Result.of(counts);
         assertThat(result.count(Rank.FIRST)).isEqualTo(0);
     }
 
@@ -32,7 +32,7 @@ class ResultTest {
         counts.put(Rank.FOURTH, 1);
         counts.put(Rank.FIFTH, 1);
 
-        Result result = new Result(counts);
+        Result result = Result.of(counts);
         assertThat(result.totalPrize()).isEqualTo(2_000_000_000L + 30_000_000L + 1_500_000L + 50_000L + 5_000L);
     }
 
@@ -42,7 +42,7 @@ class ResultTest {
         Map<Rank, Integer> counts = new EnumMap<>(Rank.class);
         counts.put(Rank.FIFTH, 1);
 
-        Result result = new Result(counts);
+        Result result = Result.of(counts);
         assertThat(result.yieldRate(8_000)).isEqualTo("62.5%");
     }
 

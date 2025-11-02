@@ -38,7 +38,7 @@ public class LottoService {
             counts.put(rank, counts.getOrDefault(rank, 0) + 1);
         }
 
-        return new Result(counts);
+        return Result.of(counts);
     }
 
     private int countMatches(Lotto lotto, WinningNumbers winningNumbers) {

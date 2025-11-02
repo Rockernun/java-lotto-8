@@ -9,11 +9,15 @@ public class Result {
 
     private final Map<Rank, Integer> counts;
 
-    public Result(Map<Rank, Integer> counts) {
+    private Result(Map<Rank, Integer> counts) {
         this.counts = new EnumMap<>(Rank.class);
         for (Rank rank : Rank.values()) {
             this.counts.put(rank, counts.getOrDefault(rank, 0));
         }
+    }
+
+    public static Result of(Map<Rank, Integer> counts) {
+        return new Result(counts);
     }
 
     public Long totalPrize() {
