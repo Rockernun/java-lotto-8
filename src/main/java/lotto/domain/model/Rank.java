@@ -1,5 +1,7 @@
 package lotto.domain.model;
 
+import java.util.Arrays;
+
 public enum Rank {
     FIRST(6, false, 2_000_000_000L),
     SECOND(5, true, 30_000_000L),
@@ -9,10 +11,12 @@ public enum Rank {
     OTHERS(0, false, 0L);
 
     private final int matchedNumberCount;
+    private final boolean containsBonusNumber;
     private final long prize;
 
-    Rank(int matchedNumberCount, boolean bonusRequired, long prize) {
+    Rank(int matchedNumberCount, boolean containsBonusNumber, long prize) {
         this.matchedNumberCount = matchedNumberCount;
+        this.containsBonusNumber = containsBonusNumber;
         this.prize = prize;
     }
 
@@ -24,23 +28,11 @@ public enum Rank {
         return prize;
     }
 
-    public static Rank of(int matchedNumberCount, boolean bonusRequired) {
-        if (matchedNumberCount == 6) {
-            return FIRST;
-        }
-        if (matchedNumberCount == 5 && bonusRequired) {
-            return SECOND;
-        }
-        if (matchedNumberCount == 5) {
-            return THIRD;
-        }
-        if (matchedNumberCount == 4) {
-            return FOURTH;
-        }
-        if (matchedNumberCount == 3) {
-            return FIFTH;
-        }
-
-        return OTHERS;
+    public static Rank of(int matchedNumberCount, boolean containsBonusNumber) {
+        return Arrays.stream(values())
+                .filter(rank -> rank.matchedNumberCount == matchedNumberCount)
+                .filter(rank -> rank.matchedNumberCount != 5 || rank.containsBonusNumber == containsBonusNumber)
+                .findFirst()
+                .orElse(OTHERS);
     }
 }
