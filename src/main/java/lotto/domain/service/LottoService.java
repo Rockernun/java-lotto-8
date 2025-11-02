@@ -31,10 +31,7 @@ public class LottoService {
     public Result evaluate(List<Lotto> lottoList, WinningNumbers winningNumbers) {
         Map<Rank, Integer> counts = new HashMap<>();
         for (Lotto lotto : lottoList) {
-            int matchCount = countMatches(lotto, winningNumbers);
-            boolean containsBonusNumber = containsBonusNumber(lotto, winningNumbers);
-
-            Rank rank = Rank.of(matchCount, containsBonusNumber);
+            Rank rank = Rank.of(countMatches(lotto, winningNumbers), containsBonusNumber(lotto, winningNumbers));
             counts.put(rank, counts.getOrDefault(rank, 0) + 1);
         }
 
