@@ -108,7 +108,8 @@
 
 # 구현할 기능 목록
 ### `Model(Lotto)`
-- [x] 로또 한 장을 반환한다.
+- [x] 로또 한 장을 생성한다.
+  - [x] 로또 번호를 오름차순으로 정렬한다.
   - [x] 번호가 6개가 아니라면 IllegalArgumentException 예외가 발생한다.
   - [x] 범위 내의 숫자가 아니라면 IllegalArgumentException 예외가 발생한다.
   - [x] 중복된 숫자가 있으면 IllegalArgumentException 예외가 발생한다.
@@ -146,6 +147,19 @@
 - [x] 당첨 결과를 집계하고, 수익률을 계산한다.
   - [x] 당첨된 등수를 각각 카운트하고 검증한다.
   - [x] 당첨된 등수에 해당하는 총 상금을 바탕으로 수익률을 계산하고 검증한다.
+
+### `Util(LottoNumbersValidator)`
+- [x] 로또 번호에 대한 공통 검증을 수행한다.
+  - [x] 로또 번호의 개수는 정해진 개수가 아니라면 IllegalArgumentException 예외가 발생한다.
+  - [x] 로또 번호 중 범위를 벗어난 번호가 있다면 IllegalArgumentException 예외가 발생한다.
+  - [x] 로또 번호 중 중복된 번호들이 있다면 IllegalArgumentException 예외가 발생한다.
+
+### `Util(LottoRules)`
+- [x] 공통으로 사용될 로또 규칙들을 정의한다.
+  - [x] 로또 번호 범위의 최솟값을 정의한다.
+  - [x] 로또 번호 범위의 최댓값을 정의한다.
+  - [x] 로또 번호의 개수를 정의한다.
+  - [x] 로또 가격 단위를 정의한다.
 
 ### `Service(LottoService)`
 - [x] 로또 번호와 당첨 번호를 바탕으로 당첨 여부를 판단한다.
