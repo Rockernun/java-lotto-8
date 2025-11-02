@@ -8,9 +8,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public final class LottoNumbers {
+public final class LottoNumbersValidator {
 
-    private LottoNumbers() {
+    private LottoNumbersValidator() {
     }
 
     public static void validateNumbers(List<Integer> numbers) {
@@ -29,7 +29,7 @@ public final class LottoNumbers {
         for (Integer number : numbers) {
             if (number < minNumber() || number > maxNumber()) {
                 throw new IllegalArgumentException(
-                        String.format("[ERROR] 로또 번호는 %d부터 %d사이의 숫자여야 합니다.", minNumber(), maxNumber()));
+                        String.format("[ERROR] 로또 번호는 %d부터 %d 사이의 숫자여야 합니다.", minNumber(), maxNumber()));
             }
         }
     }
@@ -38,7 +38,7 @@ public final class LottoNumbers {
         Set<Integer> set = new HashSet<>();
         for (Integer number : numbers) {
             if (!set.add(number)) {
-                throw new IllegalArgumentException("[ERROR] 로또 번호는 중복되면 안 됩니다.");
+                throw new IllegalArgumentException("[ERROR] 로또 번호는 중복될 수 없습니다.");
             }
         }
     }

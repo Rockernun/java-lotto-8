@@ -13,7 +13,7 @@ public class WinningNumbers {
     private WinningNumbers(List<Integer> winningNumbers, int bonusNumber) {
         this.winningNumbers = winningNumbers;
         this.bonusNumber = bonusNumber;
-        LottoNumbers.validateNumbers(winningNumbers);
+        LottoNumbersValidator.validateNumbers(winningNumbers);
         validateBonusNumberInRange(bonusNumber);
         validateDuplicateBonusNumber(bonusNumber);
     }
