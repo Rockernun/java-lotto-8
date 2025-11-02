@@ -1,5 +1,7 @@
 package lotto.domain.model;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Lotto {
@@ -8,7 +10,7 @@ public class Lotto {
 
     private Lotto(List<Integer> numbers) {
         LottoNumbersValidator.validateNumbers(numbers);
-        this.numbers = numbers;
+        this.numbers = Collections.unmodifiableList(toSortedAscending(numbers));
     }
 
     public static Lotto of(List<Integer> numbers) {
@@ -17,5 +19,11 @@ public class Lotto {
 
     public List<Integer> getLottoNumbers() {
         return numbers;
+    }
+
+    private static List<Integer> toSortedAscending(List<Integer> numbers) {
+        List<Integer> copiedList = new ArrayList<>(numbers);
+        Collections.sort(copiedList);
+        return copiedList;
     }
 }
