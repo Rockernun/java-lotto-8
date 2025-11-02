@@ -44,8 +44,12 @@ public class LottoService {
     private int countMatches(Lotto lotto, WinningNumbers winningNumbers) {
         int count = 0;
         for (Integer number : lotto.getLottoNumbers()) {
-            if (winningNumbers.getWinningNumbers().contains(number)) count++;
-            if (number == winningNumbers.getBonusNumber()) count++;
+            if (winningNumbers.getWinningNumbers().contains(number)) {
+                count++;
+            }
+            if (number == winningNumbers.getBonusNumber()) {
+                count++;
+            }
         }
 
         return count;

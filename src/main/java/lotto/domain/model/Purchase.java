@@ -25,7 +25,9 @@ public class Purchase {
     }
 
     private void validatePaymentIsPositive(int payment) {
-        if (payment <= 0) throw new IllegalArgumentException("[ERROR] 구매 금액은 반드시 양수여야 합니다.");
+        if (payment <= 0) {
+            throw new IllegalArgumentException("[ERROR] 구매 금액은 반드시 양수여야 합니다.");
+        }
     }
 
     private void validatePaymentIsMultipleOfPrice(int payment) {

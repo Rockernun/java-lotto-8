@@ -12,7 +12,9 @@ public class CommaParser implements Parser {
         List<Integer> result = new ArrayList<>();
         for (String s : input.split(DELIMITER)) {
             String trim = s.trim();
-            if (trim.isEmpty()) throw new IllegalArgumentException("[ERROR] 쉼표 사이에 공백은 허용되지 않습니다.");
+            if (trim.isEmpty()) {
+                throw new IllegalArgumentException("[ERROR] 쉼표 사이에 공백은 허용되지 않습니다.");
+            }
 
             result.add(Integer.parseInt(trim));
         }

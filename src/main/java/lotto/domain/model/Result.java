@@ -30,7 +30,7 @@ public class Result {
                 .divide(BigDecimal.valueOf(payment), 3, RoundingMode.HALF_UP)
                 .multiply(BigDecimal.valueOf(100));
 
-        return rate.setScale(1, RoundingMode.HALF_UP).toString() + "%";
+        return rate.setScale(1, RoundingMode.HALF_UP) + "%";
     }
 
     public int count(Rank rank) {

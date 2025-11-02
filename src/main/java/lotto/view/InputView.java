@@ -41,26 +41,38 @@ public class InputView {
     }
 
     private void validatePaymentIsEmpty(String input) {
-        if (input.trim().isEmpty()) throw new IllegalArgumentException("[ERROR] 구매 금액이 비어 있습니다.");
+        if (input.trim().isEmpty()) {
+            throw new IllegalArgumentException("[ERROR] 구매 금액이 비어 있습니다.");
+        }
     }
 
     private void validatePaymentIsNumber(String input) {
-        if (!input.matches(REGEX)) throw new IllegalArgumentException("[ERROR] 구입 금액은 숫자만 입력 가능합니다.");
+        if (!input.matches(REGEX)) {
+            throw new IllegalArgumentException("[ERROR] 구입 금액은 숫자만 입력 가능합니다.");
+        }
     }
 
     private void validateWinningNumbersAreEmpty(String input) {
-        if (input.trim().isEmpty()) throw new IllegalArgumentException("[ERROR] 당첨 번호가 비어 있습니다.");
+        if (input.trim().isEmpty()) {
+            throw new IllegalArgumentException("[ERROR] 당첨 번호가 비어 있습니다.");
+        }
     }
 
     private void validateWinningNumbersAreNumber(String input) {
-        if (!input.matches(REGEX)) throw new IllegalArgumentException("[ERROR] 당첨 번호는 숫자만 입력 가능합니다.");
+        if (!input.matches(REGEX)) {
+            throw new IllegalArgumentException("[ERROR] 당첨 번호는 숫자만 입력 가능합니다.");
+        }
     }
 
     private void validateBonusNumberIsEmpty(String input) {
-        if (input.trim().isEmpty()) throw new IllegalArgumentException("[ERROR] 보너스 번호가 비어 있습니다.");
+        if (input.trim().isEmpty()) {
+            throw new IllegalArgumentException("[ERROR] 보너스 번호가 비어 있습니다.");
+        }
     }
 
     private void validateBonusNumberIsNumber(String input) {
-        if (!input.matches(REGEX)) throw new IllegalArgumentException("[ERROR] 보너스 번호는 숫자만 입력 가능합니다.");
+        if (!input.matches(REGEX)) {
+            throw new IllegalArgumentException("[ERROR] 보너스 번호는 숫자만 입력 가능합니다.");
+        }
     }
 }

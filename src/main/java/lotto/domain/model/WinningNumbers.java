@@ -31,10 +31,14 @@ public class WinningNumbers {
     }
 
     private void validateBonusNumberInRange(int bonusNumber) {
-        if (bonusNumber < minNumber() || bonusNumber > maxNumber()) throw new IllegalArgumentException("[ERROR] 보너스 번호가 범위를 벗어났습니다.");
+        if (bonusNumber < minNumber() || bonusNumber > maxNumber()) {
+            throw new IllegalArgumentException("[ERROR] 보너스 번호가 범위를 벗어났습니다.");
+        }
     }
 
     private void validateDuplicateBonusNumber(int bonusNumber) {
-        if (winningNumbers.contains(bonusNumber)) throw new IllegalArgumentException("[ERROR] 보너스 번호가 당첨 번호와 중복됩니다.");
+        if (winningNumbers.contains(bonusNumber)) {
+            throw new IllegalArgumentException("[ERROR] 보너스 번호가 당첨 번호와 중복됩니다.");
+        }
     }
 }

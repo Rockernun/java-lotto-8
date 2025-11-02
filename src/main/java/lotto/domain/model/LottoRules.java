@@ -2,7 +2,8 @@ package lotto.domain.model;
 
 public final class LottoRules {
 
-    private LottoRules() {}
+    private LottoRules() {
+    }
 
     private static final int MINIMUM_NUMBER = 1;
     private static final int MAXIMUM_NUMBER = 45;

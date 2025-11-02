@@ -25,15 +25,21 @@ public enum Rank {
     }
 
     public static Rank of(int matchedNumberCount, boolean bonusRequired) {
-        if (matchedNumberCount == 6) return FIRST;
-
+        if (matchedNumberCount == 6) {
+            return FIRST;
+        }
         if (matchedNumberCount == 5 && bonusRequired) {
             return SECOND;
         }
-
-        if (matchedNumberCount == 5) return THIRD;
-        if (matchedNumberCount == 4) return FOURTH;
-        if (matchedNumberCount == 3) return FIFTH;
+        if (matchedNumberCount == 5) {
+            return THIRD;
+        }
+        if (matchedNumberCount == 4) {
+            return FOURTH;
+        }
+        if (matchedNumberCount == 3) {
+            return FIFTH;
+        }
 
         return OTHERS;
     }
