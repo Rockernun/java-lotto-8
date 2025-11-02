@@ -1,9 +1,10 @@
 package lotto.domain.model;
 
-import static lotto.domain.model.LottoRules.maxNumber;
-import static lotto.domain.model.LottoRules.minNumber;
+import static lotto.domain.utils.LottoRules.maxNumber;
+import static lotto.domain.utils.LottoRules.minNumber;
 
 import java.util.List;
+import lotto.domain.utils.LottoNumbersValidator;
 
 public class WinningNumbers {
 

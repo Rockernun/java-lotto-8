@@ -1,8 +1,8 @@
-package lotto.domain.model;
+package lotto.domain.utils;
 
-import static lotto.domain.model.LottoRules.lottoSize;
-import static lotto.domain.model.LottoRules.maxNumber;
-import static lotto.domain.model.LottoRules.minNumber;
+import static lotto.domain.utils.LottoRules.lottoSize;
+import static lotto.domain.utils.LottoRules.maxNumber;
+import static lotto.domain.utils.LottoRules.minNumber;
 
 import java.util.HashSet;
 import java.util.List;

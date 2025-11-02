@@ -3,6 +3,7 @@ package lotto.domain.model;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import lotto.domain.utils.LottoNumbersValidator;
 
 public class Lotto {
 
