@@ -33,6 +33,8 @@ class RankTest {
 
     @Test
     void 그_외의_경우를_검증한다() {
+        assertThat(Rank.of(2, false)).isEqualTo(Rank.OTHERS);
         assertThat(Rank.of(1, false)).isEqualTo(Rank.OTHERS);
+        assertThat(Rank.of(0, false)).isEqualTo(Rank.OTHERS);
     }
 }
