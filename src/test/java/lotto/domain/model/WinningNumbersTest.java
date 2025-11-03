@@ -3,14 +3,10 @@ package lotto.domain.model;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import java.util.List;
-import lotto.domain.parser.CommaParser;
-import lotto.domain.parser.Parser;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class WinningNumbersTest {
-
-    Parser parser = new CommaParser();
 
     @DisplayName("당첨 번호의 개수가 6개가 넘어가면 예외가 발생한다.")
     @Test
