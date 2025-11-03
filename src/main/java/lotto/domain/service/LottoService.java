@@ -44,7 +44,7 @@ public class LottoService {
             if (winningNumbers.getWinningNumbers().contains(number)) {
                 count++;
             }
-            if (number == winningNumbers.getBonusNumber()) {
+            if (number.equals(winningNumbers.getBonusNumber())) {
                 count++;
             }
         }
@@ -55,7 +55,7 @@ public class LottoService {
     private boolean containsBonusNumber(Lotto lotto, WinningNumbers winningNumbers) {
         boolean containsBonusNumber = false;
         for (Integer number : lotto.getLottoNumbers()) {
-            if (number == winningNumbers.getBonusNumber()) {
+            if (number.equals(winningNumbers.getBonusNumber())) {
                 containsBonusNumber = true;
             }
         }
