@@ -32,6 +32,7 @@ public class InputView {
     }
 
     public String inputBonusNumber() {
+        System.out.println();
         System.out.println("보너스 번호를 입력해 주세요.");
         String input = Console.readLine();
         validateBonusNumberIsEmpty(input);
