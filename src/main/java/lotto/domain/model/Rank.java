@@ -20,19 +20,19 @@ public enum Rank {
         this.prize = prize;
     }
 
-    public int getMatchedNumberCount() {
-        return matchedNumberCount;
-    }
-
-    public long getPrize() {
-        return prize;
-    }
-
     public static Rank of(int matchedNumberCount, boolean containsBonusNumber) {
         return Arrays.stream(values())
                 .filter(rank -> rank.matchedNumberCount == matchedNumberCount)
                 .filter(rank -> rank.matchedNumberCount != 5 || rank.containsBonusNumber == containsBonusNumber)
                 .findFirst()
                 .orElse(OTHERS);
+    }
+
+    public int getMatchedNumberCount() {
+        return matchedNumberCount;
+    }
+
+    public long getPrize() {
+        return prize;
     }
 }
